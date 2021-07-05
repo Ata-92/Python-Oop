@@ -229,3 +229,7 @@ b = "Mitchell"
 print(x + y)
 print(a + b)
 
+sqr1 = Square(5)
+sqr2 = Square(4)
+
+print('Total premiter is ', sqr1 + sqr2)
