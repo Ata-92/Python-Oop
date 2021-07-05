@@ -21,3 +21,7 @@ Person.name = "Henry"
 
 print(person1.name)
 print(person2.name)
+
+person1.name = "Aaron"
+print(person1.name)
+print(person2.name)
