@@ -145,3 +145,13 @@ class Lang:
     def __init__(self):
         pass
 
+class Employee(Person, Lang):  # multiple inheritance
+    def __init__(self, name, age, path):
+        # self.name = name
+        # self.age = age
+        super().__init__(name, age)
+        Lang.__init__(self)
+        self.path = path
+
+emp = Employee("Barry", 44, "FullStack")
+emp.details()
