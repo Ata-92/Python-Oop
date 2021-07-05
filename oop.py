@@ -108,20 +108,35 @@
 # --------------------------
 # encapsulation and abstraction
 
+# class Person:
+#     company = 'Clarusway'
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+#         self._id1 = 2002
+#         self.__id2 = 5005
+
+#     def __str__(self):
+#         return f'Name : {self.name} Age: {self.age}'
+
+# person = Person("Rafe", 39)
+# person._id1 = 3003
+# print(person._id1)
+# person.__id2 = 4004
+# print(person.__id2)
+# print(person._Person__id2)
+
+# ----------------------------
+# inheritance and polymorphism
+
 class Person:
-    company = 'Clarusway'
+    company = "Clarusway"
     def __init__(self, name, age):
         self.name = name
         self.age = age
-        self._id1 = 2002
-        self.__id2 = 5005
 
     def __str__(self):
-        return f'Name : {self.name} Age: {self.age}'
+        return f"Name: {self.name} Age: {self.age}"
 
-person = Person("Rafe", 39)
-person._id1 = 3003
-print(person._id1)
-person.__id2 = 4004
-print(person.__id2)
-print(person._Person__id2)
+    def details(self):
+        print(f"Company: {Person.company}\nName: {self.name}\nAge: {self.age}")
