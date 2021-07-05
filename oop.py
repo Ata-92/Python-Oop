@@ -15,5 +15,9 @@ person2 = Person()
 print(person1.name)
 print(person2.name)
 
+# class attribute ve instance attribute
 
+Person.name = "Henry"
 
+print(person1.name)
+print(person2.name)
