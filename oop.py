@@ -57,20 +57,28 @@
 
 # Static Methods
 
+# class Person:
+#     name = 'Barry'
+#     age = 44
+
+#     def set_details(self):
+#         self.name = "Rafe"
+#         print(self.name)
+#         self.location = "Turkey"
+
+#     @staticmethod
+#     def salute():
+#         print("Hi there!", Person.name)
+
+# person = Person()
+# person.set_details()
+# person.salute()
+# Person.salute()
+
+# Special methods
+
 class Person:
-    name = 'Barry'
-    age = 44
-
-    def set_details(self):
-        self.name = "Rafe"
-        print(self.name)
-        self.location = "Turkey"
-
-    @staticmethod
-    def salute():
-        print("Hi there!", Person.name)
-
-person = Person()
-person.set_details()
-person.salute()
-Person.salute()
+    company = "Clarusway"
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
