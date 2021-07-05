@@ -194,3 +194,17 @@ class Person:
 person = Person("Barry", 44)
 person.salary = 1000
 print(person.salary)
+
+# -------------------------
+# inner class
+
+from django.db import models
+
+class Article(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+
+    # inner class
+    class Meta:
+        ordering = ["last_name"]
+        abstract = True
