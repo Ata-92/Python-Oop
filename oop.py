@@ -15,6 +15,7 @@
 # print(person1.name)
 # print(person2.name)
 
+# --------------------------
 # class attribute ve instance attribute
 
 # Person.name = "Henry"
@@ -26,6 +27,7 @@
 # print(person1.name)
 # print(person2.name)
 
+# --------------------------
 # SELF keyword
 
 # class Person:
@@ -55,6 +57,7 @@
 # print(Person.location)
 # print(Person.name)
 
+# --------------------------
 # Static Methods
 
 # class Person:
@@ -75,28 +78,50 @@
 # person.salute()
 # Person.salute()
 
+# --------------------------
 # Special methods
 
+# class Person:
+#     company = "Clarusway"
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+
+#     def __str__(self):
+#         return f"Name: {self.name} Age: {self.age}"
+
+#     def __len__(self):
+#         return self.age
+
+# person = Person("Barry", 44)
+# print(person.name)
+
+# lst = [1,2,3]
+# print(lst)
+# print(person)
+# print(person.__str__())
+
+# print(len(lst))
+# print(len(person))
+# print(person.__len__())
+
+# --------------------------
+# encapsulation and abstraction
+
 class Person:
-    company = "Clarusway"
+    company = 'Clarusway'
     def __init__(self, name, age):
         self.name = name
         self.age = age
+        self._id1 = 2002
+        self.__id2 = 5005
 
     def __str__(self):
-        return f"Name: {self.name} Age: {self.age}"
+        return f'Name : {self.name} Age: {self.age}'
 
-    def __len__(self):
-        return self.age
-
-person = Person("Barry", 44)
-print(person.name)
-
-lst = [1,2,3]
-print(lst)
-print(person)
-print(person.__str__())
-
-print(len(lst))
-print(len(person))
-print(person.__len__())
+person = Person("Rafe", 39)
+person._id1 = 3003
+print(person._id1)
+person.__id2 = 4004
+print(person.__id2)
+print(person._Person__id2)
