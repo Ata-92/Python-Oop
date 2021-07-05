@@ -153,5 +153,11 @@ class Employee(Person, Lang):  # multiple inheritance
         Lang.__init__(self)
         self.path = path
 
+    # override
+
+    def details(self):
+        print(f"Company: {Person.company}\nName: {self.name}\nAge :{self.age}\nPath: {self.path}")
+
 emp = Employee("Barry", 44, "FullStack")
 emp.details()
+print(Employee.mro())
