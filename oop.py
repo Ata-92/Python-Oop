@@ -165,46 +165,67 @@
 # ----------------------
 # getter and setter
 
-class Person:
-    company = 'Clarusway'
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-        self.__salary = 5000
+# class Person:
+#     company = 'Clarusway'
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+#         self.__salary = 5000
 
-    def __str__(self):
-        return f'Name : {self.name} Age: {self.age}'
+#     def __str__(self):
+#         return f'Name : {self.name} Age: {self.age}'
 
-    def details(self):
-        print(f'Company: {Person.company}\nName: {self.name}\nAge :{self.age}')
+#     def details(self):
+#         print(f'Company: {Person.company}\nName: {self.name}\nAge :{self.age}')
 
-    @property
-    def salary(self):
-        print("getter called")
-        return self.__salary
+#     @property
+#     def salary(self):
+#         print("getter called")
+#         return self.__salary
 
-    @salary.setter
-    def salary(self, salary):
-        # if salary < 2000 or salary > 10000:
-        if not 2000 < salary < 10000:
-            raise ValueError('Invalid salary.')
-        print('setter called')
-        self.__salary = salary
+#     @salary.setter
+#     def salary(self, salary):
+#         # if salary < 2000 or salary > 10000:
+#         if not 2000 < salary < 10000:
+#             raise ValueError('Invalid salary.')
+#         print('setter called')
+#         self.__salary = salary
 
-person = Person("Barry", 44)
-person.salary = 1000
-print(person.salary)
+# person = Person("Barry", 44)
+# person.salary = 1000
+# print(person.salary)
 
 # -------------------------
 # inner class
 
-from django.db import models
+# from django.db import models
 
-class Article(models.Model):
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
+# class Article(models.Model):
+#     first_name = models.CharField(max_length=30)
+#     last_name = models.CharField(max_length=30)
 
-    # inner class
-    class Meta:
-        ordering = ["last_name"]
-        abstract = True
+#     # inner class
+#     class Meta:
+#         ordering = ["last_name"]
+#         abstract = True
+
+# -----------------------
+# overloading an operator
+
+class Square:
+    def __init__(self, side):
+        self.side = side
+        self.premiter = self.side * 4
+
+    def __add__(x, y):
+        return x.premiter + y.premiter
+
+x = 2
+y = 5
+
+a = "Barry"
+b = "Mitchell"
+
+print(x + y)
+print(a + b)
+
