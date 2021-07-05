@@ -82,3 +82,21 @@ class Person:
     def __init__(self, name, age):
         self.name = name
         self.age = age
+
+    def __str__(self):
+        return f"Name: {self.name} Age: {self.age}"
+
+    def __len__(self):
+        return self.age
+
+person = Person("Barry", 44)
+print(person.name)
+
+lst = [1,2,3]
+print(lst)
+print(person)
+print(person.__str__())
+
+print(len(lst))
+print(len(person))
+print(person.__len__())
