@@ -140,3 +140,8 @@ class Person:
 
     def details(self):
         print(f"Company: {Person.company}\nName: {self.name}\nAge: {self.age}")
+
+class Lang:
+    def __init__(self):
+        pass
+
