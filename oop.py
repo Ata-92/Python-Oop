@@ -212,24 +212,55 @@
 # -----------------------
 # overloading an operator
 
-class Square:
+# class Square:
+#     def __init__(self, side):
+#         self.side = side
+#         self.premiter = self.side * 4
+
+#     def __add__(x, y):
+#         return x.premiter + y.premiter
+
+# x = 2
+# y = 5
+
+# a = "Barry"
+# b = "Mitchell"
+
+# print(x + y)
+# print(a + b)
+
+# sqr1 = Square(5)
+# sqr2 = Square(4)
+
+# print('Total premiter is ', sqr1 + sqr2)
+
+# ----------------------
+# abstract base class
+
+from abc import ABCMeta, abstractmethod
+
+class Shape(metaclass = ABCMeta):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Square(Shape):
     def __init__(self, side):
         self.side = side
-        self.premiter = self.side * 4
 
-    def __add__(x, y):
-        return x.premiter + y.premiter
+    def area(self):
+        print("Area of Square", self.side ** 2)
 
-x = 2
-y = 5
+class Rectangle(Shape):
+    def __init__(self, side1, side2):
+        self.side1 = side1
+        self.side2 = side2
 
-a = "Barry"
-b = "Mitchell"
+    def area(self):
+        print("Area of Rectangle", self.side1 * self.side2)
 
-print(x + y)
-print(a + b)
+rect = Rectangle(4,5)
+rect.area()
 
-sqr1 = Square(5)
-sqr2 = Square(4)
-
-print('Total premiter is ', sqr1 + sqr2)
+test = Shape()
+test.area()
