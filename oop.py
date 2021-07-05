@@ -129,35 +129,68 @@
 # ----------------------------
 # inheritance and polymorphism
 
+# class Person:
+#     company = "Clarusway"
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+
+#     def __str__(self):
+#         return f"Name: {self.name} Age: {self.age}"
+
+#     def details(self):
+#         print(f"Company: {Person.company}\nName: {self.name}\nAge: {self.age}")
+
+# class Lang:
+#     def __init__(self):
+#         pass
+
+# class Employee(Person, Lang):  # multiple inheritance
+#     def __init__(self, name, age, path):
+#         # self.name = name
+#         # self.age = age
+#         super().__init__(name, age)
+#         Lang.__init__(self)
+#         self.path = path
+
+#     # override
+
+#     def details(self):
+#         print(f"Company: {Person.company}\nName: {self.name}\nAge :{self.age}\nPath: {self.path}")
+
+# emp = Employee("Barry", 44, "FullStack")
+# emp.details()
+# print(Employee.mro())
+
+# ----------------------
+# getter and setter
+
 class Person:
-    company = "Clarusway"
+    company = 'Clarusway'
     def __init__(self, name, age):
         self.name = name
         self.age = age
+        self.__salary = 5000
 
     def __str__(self):
-        return f"Name: {self.name} Age: {self.age}"
+        return f'Name : {self.name} Age: {self.age}'
 
     def details(self):
-        print(f"Company: {Person.company}\nName: {self.name}\nAge: {self.age}")
+        print(f'Company: {Person.company}\nName: {self.name}\nAge :{self.age}')
 
-class Lang:
-    def __init__(self):
-        pass
+    @property
+    def salary(self):
+        print("getter called")
+        return self.__salary
 
-class Employee(Person, Lang):  # multiple inheritance
-    def __init__(self, name, age, path):
-        # self.name = name
-        # self.age = age
-        super().__init__(name, age)
-        Lang.__init__(self)
-        self.path = path
+    @salary.setter
+    def salary(self, salary):
+        # if salary < 2000 or salary > 10000:
+        if not 2000 < salary < 10000:
+            raise ValueError('Invalid salary.')
+        print('setter called')
+        self.__salary = salary
 
-    # override
-
-    def details(self):
-        print(f"Company: {Person.company}\nName: {self.name}\nAge :{self.age}\nPath: {self.path}")
-
-emp = Employee("Barry", 44, "FullStack")
-emp.details()
-print(Employee.mro())
+person = Person("Barry", 44)
+person.salary = 1000
+print(person.salary)
